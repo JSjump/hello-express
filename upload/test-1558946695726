@@ -1,0 +1,436 @@
+# amazon
+
+## 主要技术：
+     vue
+     elemet
+     
+## 启动
+### 1.安装node环境
+     1).下载node安装包
+     2).在node的安装目录下的node_modules\npm\npmrc文件内添加配置：registry = http://repos.it.taikang.com/repository/npm-group
+### 2.启动项目：
+     1）安装：npm install
+     2) 启动：npm run serve
+
+## 访问
+     
+     http://localhost:8082/amazon/login
+
+
+## 目录结构
+    |— config                                             // 配置文件
+    |  |— config.dev.js                                   // 开发环境
+    |  |— config.prod.js                                  // 生产环境
+    |  |— config.test.js                                  // 测试环境
+    |
+    |— public                                             // 页面编辑器相关      
+    |  |— img
+    |  |— UE
+    |
+    |— src              
+    |  |— api                                             // 接口
+    |  |  |— card
+    |  |  |  |— ba-table.js
+    |  |  |  |— card-detail.js
+    |  |  |  |— change-task-table.js
+    |  |  |  |— sa-table.js
+    |  |  |
+    |  |  |— attachement.js                               
+    |  |  |— card.js                                     
+    |  |  |— cardInfo.js
+    |  |  |— create-card.js
+    |  |  |— dict.js
+    |  |  |— dragKanban.js
+    |  |  |— flow.js
+    |  |  |— global-search.js                             
+    |  |  |— group.js
+    |  |  |— member.js
+    |  |  |— menu.js
+    |  |  |— notice.js
+    |  |  |— organization.js
+    |  |  |— permission.js
+    |  |  |— project.js
+    |  |  |— role.js
+    |  |  |— system.js
+    |  |  |— task.js
+    |  |  |— template.js
+    |  |  |— user.js
+    |  |  |— zone.js
+    |  |  |— zone-manager.js                              
+    |  |  |— zoneList.js
+    |  |  |— zoneRole.js
+    |  |  |— zoneRoleSet.js
+    |  |  |— zoneSet.js
+    |  |
+    |  |— assets
+    |  |  |— css
+    |  |  |  |— app.css
+    |  |  |  |— pubAuthority.css                          
+    |  |  |  |— public.css
+    |  |  |  |— pubSysSet.css
+    |  |  |  |— reset.css
+    |  |  |  |— t-element.css
+    |  |  |  |— transition.css
+    |  |  | 
+    |  |  |— iconfont
+    |  |  |— images
+    |  |  |  |— 1.jpg
+    |  |  |  |— favicon.ico
+    |  |  |  |— favicon.jpg                               
+    |  |  |  |— loading.gif
+    |  |  |  |— login.jpg
+    |  |  |  |— login_logo.png
+    |  |  |  |— no-card-list.png
+    |  |  |  |— rd.png
+    |  |  |  |— taikang.png
+    |  |  |  |— todo-list.png
+    |  |  |  |— workflow.jpg
+    |  |  |  
+    |  |  |— js
+    |  |  |  |— app.js
+    |  |  |  |— util.js
+    |  |
+    |  |— components                                      // 全局公用组件
+    |  |  |— drag-kanban                                  // 排期拖拽
+    |  |  |  |— index.vue                                 // 排期拖拽入口
+    |  |  |  |— scheduleCard.vue                          // 单个排期卡片
+    |  |  |
+    |  |  |— TreeTable
+    |  |  |  |— index.vue                                 // 架构树
+    |  |  | 
+    |  |  |  |— CommonPagination.vue                      // 公用分页组件
+    |  |  |  |— EnclosureList.vue                         // 附件上传组件
+    |  |
+    |  |— layouts
+    |  |  |— horizontalLayout                             // 废弃待确认
+    |  |  |  |— FooterBar.vue
+    |  |  |  |— index.js                                  
+    |  |  |  |— Navbar.vue
+    |  |  |  |
+    |  |  |— verticalLayout                               // 废弃待确认
+    |  |  |  |— AppMain.vue
+    |  |  |  |— FooterBar.vue
+    |  |  |  |— index.js
+    |  |  |  |— NavBar.vue
+    |  |  |  |— SideBar.vue
+    |  |  |
+    |  |  |— error.vue
+    |  |  |— fullScreen.vue                               // 未被引用-废弃待确认
+    |  |  |— horizontal.vue                               // 未被引用-废弃待确认
+    |  |  |— README.md
+    |  |  |— verticai.vue                                 // 未被引用-废弃待确认
+    |  | 
+    |  |— mock                                            // 模拟数据
+    |  |  |— modules
+    |  |  |  |— zone
+    |  |  |  |  |— zone-template.js
+    |  |  |  |
+    |  |  |  |— card.js
+    |  |  |  |— card-list.js
+    |  |  |  |— create-card.js
+    |  |  |  |— members.js                                
+    |  |  |  |— role.js
+    |  |  |  |— schduleCardList.js
+    |  |  |  |— zone-template-set-data.js
+    |  |  |
+    |  |  |— index.js
+    |  |  |— response.js
+    |  |
+    |  |— router
+    |  |  |— index.js                                     // 路由配置
+    |  |
+    |  |— store
+    |  |  |— modules
+    |  |  |  |— app.js                                  
+    |  |  |  |— card.js                                   // 卡片store    
+    |  |  |  |— notice.js                                 // 通知store    
+    |  |  |  |— permission.js                             // 用户权限store
+    |  |  |  |— style.js                                  // 侧边样式store
+    |  |  |  |— template.js                               // 空间模板store
+    |  |  |  |— user.js                                   // 用户store
+    |  |  |  |— zone.js                                   // 空间store
+    |  |  |
+    |  |  |— getter.js                                    // 统一定义getter方法
+    |  |  |— index.js    
+    |  |  |— mutation-types.js                            // 统一定义mutation名称
+    |  |
+    |  |— utils 
+    |  |  |— auth.js                 
+    |  |  |— commonUtil.js
+    |  |  |— config.js
+    |  |  |— global-constant.js                           //
+    |  |  |— request.js
+    |  |  |— systemPermission.js
+    |  |  |— util.js
+    |  |
+    |  |— views
+    |  |  |— common
+    |  |  |  |— GlobalShortcutMenu.vue                    // 全局便捷设置菜单
+    |  |  |
+    |  |  |— global-search
+    |  |  |  |— index.vue                                 // 全局搜索入口
+    |  |  |  |— resultItem.vue                            // 全局搜索结果单个卡片
+    |  |  |  |— searchResult.vue                          // 全局搜索结果列表及分类
+    |  |  |  
+    |  |  |— personal-setting
+    |  |  |  |— setting
+    |  |  |  |  |— components
+    |  |  |  |  |  |— ZoneAndRole.vue                     // 个人设置-查看角色弹层
+    |  |  |  |  |  |— ZoneAndRoleTable.vue                // 查看角色弹层-权限表格
+    |  |  |  |  |
+    |  |  |  |  |— index.vue                              // 个人设置入口
+    |  |  |  |
+    |  |  |  |— index.vue                                 //
+    |  |  | 
+    |  |  |— setting
+    |  |  |  |— board
+    |  |  |  |  |— index.vue                              // 看板入口
+    |  |  |  | 
+    |  |  |  |— card-info                                 // 卡片信息
+    |  |  |  |  |— ba
+    |  |  |  |  |  |— index.vue                           // 业务卡片弹层
+    |  |  |  |  | 
+    |  |  |  |  |— change
+    |  |  |  |  |  |— components
+    |  |  |  |  |  |  |— ChangeCreateDefects.vue          // 变更卡片-创建缺陷弹层
+    |  |  |  |  |  |  |— CreatedItTest.vue                // 变更卡片-创建IT测试
+    |  |  |  |  |  |  |— CreatedItTestForm.vue            // 变更卡片-创建IT表单
+    |  |  |  |  |  |  |— CreatedJiraTask.vue              // 变更卡片-创建Jira任务
+    |  |  |  |  |  |  |— CreatedJitaTaskForm.vue          // 变更卡片-创建Jira任务表单
+    |  |  |  |  |  |  |— CreatedTask.vue                  // 变更卡片-创建任务
+    |  |  |  |  |  |  |— CreatedTaskForm.vue              // 变更卡片-创建任务表单
+    |  |  |  |  |  |  |— DefectDisplay.vue                // 变更卡片-缺陷信息
+    |  |  |  |  |  |  |— JiraCardItem.vue                 // 变更卡片-Jira任务信息
+    |  |  |  |  |  |  |— property.vue                     // 变更卡片-属性信息
+    |  |  |  |  |  |  |— VersionTestDesc.vue              // 变更卡片-添加测试版本说明
+    |  |  |  |  |  |  |— VersionTestDisplay.vue           // 变更卡片-测试版本信息
+    |  |  |  |  |  |  
+    |  |  |  |  |  |— index.vue                           // 变更卡片弹层
+    |  |  |  |  | 
+    |  |  |  |  |— components                             //卡片信息公用组件  
+    |  |  |  |  |  |— rely
+    |  |  |  |  |  |  |— relyDialog.vue                   // 创建依赖弹层
+    |  |  |  |  |  |  |— relyDisplay.vue                  // 展示依赖卡片列表
+    |  |  |  |  |  |  |— relyItem.vue                     // 单个依赖卡片
+    |  |  |  |  |  |   
+    |  |  |  |  |  |— work-rewords
+    |  |  |  |  |  |  |— workRecordDialog.vue             // 创建工作记录弹层
+    |  |  |  |  |  |  |— workRecordDisplay.vue            // 展示工作记录
+    |  |  |  |  |  |  |— workRecordEdit.vue               // 编辑工作记录弹层
+    |  |  |  |  |  |  
+    |  |  |  |  |  |— addHinder.vue                       // 添加阻碍Form
+    |  |  |  |  |  |— attachment.vue                      // 附件信息列表
+    |  |  |  |  |  |— ChangeCardItem.vue                  // 变更信息列表
+    |  |  |  |  |  |— CloseCarDialog.vue                  // 关闭卡片弹层
+    |  |  |  |  |  |— createdSaCard.vue                   // 创建系统需求弹层
+    |  |  |  |  |  |— DynamicInfo.vue                     // 卡片详情动态信息
+    |  |  |  |  |  |— editHinder.vue                      // 编辑阻碍按钮弹层
+    |  |  |  |  |  |— evalExecuteDialog.vue               // 评估弹层
+    |  |  |  |  |  |— evaluate.vue                        // 发起评估
+    |  |  |  |  |  |— evaluateDisplay.vue                 // 卡片中评估信息
+    |  |  |  |  |  |— hinderBlock.vue                     // 填写阻碍弹层
+    |  |  |  |  |  |— HistoryRecord.vue                   // 历史记录信息
+    |  |  |  |  |  |— labelContent.vue                    // 卡片详情头部信息
+    |  |  |  |  |  |— LeaveInput.vue                      // 留言模拟输入框
+    |  |  |  |  |  |— LeaveWord.vue                       // 留言框
+    |  |  |  |  |  |— OaRequest.vue                       // OA申请历史记录
+    |  |  |  |  |  |— property.vue                        // 业务及系统需求卡片属性信息
+    |  |  |  |  |  |— relieveHinder.vue                   // 解除阻碍弹层
+    |  |  |  |  |  |— saList.vue                          // 卡片弹层中系统卡片信息
+    |  |  |  |  |  |— taskList.vue                        // 卡片弹层中任务卡片信息
+    |  |  |  |  |  |— UatSubmit.vue                       // 提交UAT弹层       
+    |  |  |  |  |  |— UatSubmitForm.vue                   // 提交UAT弹层表单  
+    |  |  |  |  |  |— UatTest.vue                         // UAT测试弹层  
+    |  |  |  |  |  |— UatTestForm.vue                     // UAT测试弹层表单
+    |  |  |  |  |  |— uploadAttachment.vue                // 上传文件弹层
+    |  |  |  |  |   
+    |  |  |  |  |— defect
+    |  |  |  |  |  |— components
+    |  |  |  |  |  |  |— CreateDefects.vue                // 创建缺陷弹层
+    |  |  |  |  |  |  |— DefectDispose.vue                // 缺陷处理弹层
+    |  |  |  |  |  |  |— property.vue                     // 缺陷卡片属性信息
+    |  |  |  |  |  |  
+    |  |  |  |  |  |— index.vue                           // 缺陷卡片弹层
+    |  |  |  |  | 
+    |  |  |  |  |— sa
+    |  |  |  |  |  |— components
+    |  |  |  |  |  |  |— createdSchedulling.vue           // 创建排期卡片
+    |  |  |  |  |  |  |— createSchedullingForm.vue        // 创建排期卡片表单
+    |  |  |  |  |  |  |— OaPost.vue                       // 发起OA申请弹层
+    |  |  |  |  |  |  
+    |  |  |  |  |  |— index.vue                           // 系统卡片弹层
+    |  |  |  |  |
+    |  |  |  |  |— schedule
+    |  |  |  |  |  |— components  
+    |  |  |  |  |  |  |— CloseSchedule.vue                // 关闭排期弹层
+    |  |  |  |  |  |  |— CreatedChangeCard.vue            // 创建变更卡片
+    |  |  |  |  |  |  |— CreatedChangeCardForm.vue        // 创建变更卡片表单
+    |  |  |  |  |  |  |— property.vue                     // 排期卡片属性信息
+    |  |  |  |  |  |  |— ReviewAgain.vue                  // 再次评审弹层
+    |  |  |  |  |  |  
+    |  |  |  |  |  |— index.vue                           // 排期卡片弹层
+    |  |  |  |  |
+    |  |  |  |  |— task
+    |  |  |  |  |  |— components
+    |  |  |  |  |  |  |— property.vue                     // 任务卡片属性信息
+    |  |  |  |  |  |  
+    |  |  |  |  |  |— index.vue                           // 任务卡片弹层
+    |  |  |  | 
+    |  |  |  |— card-list
+    |  |  |  |  |— AdvancedFilter.vue                     // 高级筛选
+    |  |  |  |  |— BaTable.vue                            // 业务需求卡片列表
+    |  |  |  |  |— ChangeTaskTable.vue                    // 变更卡片关联的任务卡片
+    |  |  |  |  |— CopyCreateCard.vue                     // 复制卡片弹层         
+    |  |  |  |  |— CopyScheduling.vue                     // 复制排期卡片弹层   
+    |  |  |  |  |— CreatedChangeCard.vue                  // 创建变更弹层
+    |  |  |  |  |— CreatedJiraTask.vue                    // 创建jira任务弹层
+    |  |  |  |  |— CreatedSchedule.vue                    // 创建排期弹层
+    |  |  |  |  |— CreatedSysCard.vue                     // 创建系统需求
+    |  |  |  |  |— DefectsTable.vue                       // 缺陷列表
+    |  |  |  |  |— ExportPopover.vue                      // 列表上方导出功能
+    |  |  |  |  |— FilterDatePopover.vue                  // 列表数据筛选
+    |  |  |  |  |— FilterMemberPopover.vue                // 负责人筛选
+    |  |  |  |  |— index.vue            
+    |  |  |  |  |— ReleaseTestDialog.vue                  // 测试环境发布
+    |  |  |  |  |— SaChangeTable.vue                      // 系统卡片关联的变更卡片
+    |  |  |  |  |— SaScheduleTable.vue                    // 系统卡片关联的排期卡片
+    |  |  |  |  |— SelectTestChange.vue                   // 提交测试变更弹层
+    |  |  |  |  |— UatSubmit.vue                          // 提交UAT测试
+    |  |  |  |  
+    |  |  |  |— components
+    |  |  |  |  |— AllNotice.vue                          // 通知列表
+    |  |  |  |  |— AppMain.vue
+    |  |  |  |  |— CreateCard.vue                         // 创建卡片
+    |  |  |  |  |— CreatedCardForm.vue                    // 创建卡片from表单
+    |  |  |  |  |— index.js       
+    |  |  |  |  |— NavBar.vue                             // 顶部导航条
+    |  |  |  |  |— NoticeList.vue                         // 通知弹层列表
+    |  |  |  |  |— NoticeTip.vue                          // 通知弹层
+    |  |  |  |  |— SliderBar.vue                          // 侧边导航
+    |  |  |  | 
+    |  |  |  |— files
+    |  |  |  |  |— index.vue                              // 文档
+    |  |  |  | 
+    |  |  |  |— report-form
+    |  |  |  |  |— index.vue                              // 报表
+    |  |  |  | 
+    |  |  |  |— schedule-drag
+    |  |  |  |  |— index.vue                              // 排期
+    |  |  |  | 
+    |  |  |  |— space-setting                             // 空间设置项
+    |  |  |  |  |— BaseInfo.vue                           // 基本信息设置
+    |  |  |  |  |— CardStatus.vue                         // 卡片状态设置
+    |  |  |  |  |— ContentTemplate.vue                    // 模板内容设置
+    |  |  |  |  |— History.vue                            // 历史查看
+    |  |  |  |  |— Notice.vue                             // 通知
+    |  |  |  |  |— ZoneRole.vue                           // 角色设置
+    |  |  |  |  |— index.vue
+    |  |  |  | 
+    |  |  |  |— version                  
+    |  |  |  |  |— index.vue                              // 版本计划
+    |  |  |  | 
+    |  |  |  |— FeaturesList.vue                          // 暂时未引用 TIME:20190524
+    |  |  |  |— index.vue                                 // 空间设置总入口
+    |  |  |  
+    |  |  |— system
+    |  |  |  |— components
+    |  |  |  |  |— index.js
+    |  |  |  |  |— Middlenavbar.vue
+    |  |  |  |  |— OrgListCheckComponent.vue               // 组织架构列表
+    |  |  |  |  |— OrgListDisplayComponent.vue             // 组织架构树
+    |  |  |  |  |— SlideMenu.vue                           // 系统角色侧边栏
+    |  |  |  |  |— SysMain.vue                             // 协作空间子路由显示页
+    |  |  |  |  |— Topnavbar.vue                           // 顶部切换
+    |  |  |  | 
+    |  |  |  |— group                                       
+    |  |  |  |  |— AddGroupUser.vue                        // 添加成员 
+    |  |  |  |  |— AddGroupUserDialog.vue                  // 添加成员弹层
+    |  |  |  |  |— GroupDialog.vue                         // 添加用户组弹层
+    |  |  |  |  |— index.vue                               // 系统设置--用户组管理
+    |  |  |  | 
+    |  |  |  |— member
+    |  |  |  |  |— AddTempUser.vue                         // 添加临时人员弹层（临时人员）
+    |  |  |  |  |— index.vue                               // 系统设置--人员管理
+    |  |  |  |  |— UserGroup.vue                           // 查看用户组
+    |  |  |  |  |— UserRole.vue                            // 查看空间/角色
+    |  |  |  | 
+    |  |  |  |— system-role
+    |  |  |  |  |— AddRoleUser.vue                         // 添加成员表单
+    |  |  |  |  |— AddRoleUserDialog.vue                   // 添加角色成员弹层
+    |  |  |  |  |— BaseRoleDialog.vue                      // 添加系统角色
+    |  |  |  |  |— customEval.js                           // 用户等级
+    |  |  |  |  |— index.vue                               // 系统设置--系统角色管理
+    |  |  |  | 
+    |  |  |  |— zone-role
+    |  |  |  |  |— components
+    |  |  |  |  |  |— ExtendsModule.vue                    // 添加空间角色-继承模板
+    |  |  |  |  | 
+    |  |  |  |  |— index.vue                               // 系统设置--空间角色管理
+    |  |  |  |  |— ResourceOperationConfig.vue             // 角色权限设置
+    |  |  |  |  |— zoneRoleDialog.vue                      // 添加空间角色弹层
+    |  |  |  | 
+    |  |  |  |— index.vue                                  // 系统设置入口
+    |  |  | 
+    |  |  |— work-flow                                     // 临时展示-删除待确认
+    |  |  |  |— flowDisplay.vue                            
+    |  |  |  |— index.vue
+    |  |  |  |— opreate.vue
+    |  |  |  |— table.vue
+    |  |  | 
+    |  |  |— workbench                                     // 工作台
+    |  |  |  |— components
+    |  |  |  |  |— mineSpace.vue                           
+    |  |  |  |  |— mineSpaceItem.vue                       // 最近浏览空间项目展示
+    |  |  |  | 
+    |  |  |  |— myTask
+    |  |  |  |  |— components
+    |  |  |  |  |  |— CardBlock.vue                        // 卡片显示区域（包含不同类型）
+    |  |  |  |  |  |— workbenchCreatedScheduling.vue       // 创建排期弹层
+    |  |  |  |  
+    |  |  |  |  |— index.vue                               // 我的卡片入口
+    |  |  |  | 
+    |  |  |  |— index.vue                                  // 工作台入口
+    |  |  | 
+    |  |  |— zone-setting                                  // 空间管理
+    |  |  |  |— components
+    |  |  |  |  |— create.vue                              // 新建模板
+    |  |  |  |  |— search.vue                              // 搜索空间
+    |  |  |  |  |— UE.vue
+    |  |  |  |  |— ZoneCreate.vue                          // 新建空间
+    |  |  |  | 
+    |  |  |  |— template
+    |  |  |  |  |— setting
+    |  |  |  |  |  |— role                                 
+    |  |  |  |  |  |  |— AddRoleUser.vue                   // 设置空间模板-角色-添加人员
+    |  |  |  |  |  |  |— AddRoleUserDialog.vue             // 设置空间模板-角色-添加人员
+    |  |  |  |  |  |  |— BaseRoleDialog.vue                // 设置空间模板-添加角色
+    |  |  |  |  |  |  |— index.vue                         // 设置空间模板-角色
+    |  |  |  |  |  |  |— ResourceOperationConfig.vue       // 设置空间模板-角色权限配置
+    |  |  |  |  |  |  |— SlideMenu.vue                     // 设置空间模板-角色列表
+    |  |  |  |  |  |
+    |  |  |  |  |  |— BaseInfo.vue                         // 设置空间模板-基本信息
+    |  |  |  |  |  |— CardStatus.vue                       // 设置空间模板-卡片状态  
+    |  |  |  |  |  |— ContentTemplate.vue                  // 设置空间模板-内容模板
+    |  |  |  |  |  |— History.vue                          // 设置空间模板-历史
+    |  |  |  |  |  |— index.vue                            // 模板配置总入口 
+    |  |  |  |  |  |— Notice.vue                           // 设置空间模板-通知      
+    |  |  |  |  
+    |  |  |  |  |— index.vue                               // 协作空间-空间模板列表
+    |  |  |  | 
+    |  |  |  |— zone                                       
+    |  |  |  |  |— setting                                 // 已废弃->space-setting 
+    |  |  |  |  |  |— BaseInfo.vue                         // 已废弃                                     
+    |  |  |  |  |  |— CardStatus.vue                       // 已废弃
+    |  |  |  |  |  |— ContentTemplate.vue                  // 已废弃
+    |  |  |  |  |  |— History.vue                          // 已废弃    
+    |  |  |  |  |  |— index.vue                            // 已废弃               
+    |  |  |  |  |  |— ZoneRole.vue                         // 已废弃
+    |  |  |  |  |  |
+    |  |  |  |  |— index.vue                               // 协作空间列表
+    |  |  |  | 
+    |  |  | 
+    |  |  |— login.vue                                     
+    |  |— App.vue
+    |  |— main.js                                        
+    |  |— permissions.js                                   // 路由级权限控制
+
